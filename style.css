@@ -16,10 +16,18 @@ body {
 }
 
 /* Page Colors */
-#page-1 { background: var(--page-1-color) }
-#page-2 { background: var(--page-2-color) }
-#page-3 { background: var(--page-3-color) }
-#page-4 { background: var(--page-4-color) }
+#page-1 {
+   background: var(--page-1-color);
+}
+#page-2 {
+   background: var(--page-2-color);
+}
+#page-3 {
+   background: var(--page-3-color);
+}
+#page-4 {
+   background: var(--page-4-color);
+}
 
 .page {
    display: flex;
@@ -50,7 +58,7 @@ body {
    border: none;
    margin-top: 1rem;
    font-size: 1.1rem;
-   transition: all 0.3s ease-in;
+   transition: all 0.3s ease-in-out;
 }
 
 .btn:hover,
@@ -66,24 +74,41 @@ body {
 
 /* Page Animation */
 #page-1 h1 {
-   transform: translateY(-1200px);
+   transform: translateY(-1500px);
    animation: heading var(--animate-speed) forwards ease-in-out;
 }
 
 #page-1 p {
-   transform: translateX(-1200px);
+   transform: translateX(-1500px);
    animation: paragraph var(--animate-speed) forwards ease-in-out 1s;
 }
 
 /* Keyframes */
 @keyframes heading {
    to {
-      transform: translateY(0);   
+      transform: translateY(0);
    }
 }
 
 @keyframes paragraph {
    to {
       transform: translateX(0);
+   }
+}
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+   html {
+      font-size: 80%;
+   }
+   body {
+      overflow: scroll;
+   }
+   .btn {
+      transition: none;
+   }
+   .page {
+      padding: 0 6rem;
    }
 }
